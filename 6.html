@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            for(let i=0; i<3000; i++){
+                document.write('<input type="button">');       
+            }
+        </script>
+        <script>
+            let inputs = document.querySelectorAll('input');
+            for(let i=0; i<inputs.length; i++){
+                function clickHandler(evt){
+                    if(evt.altKey === true){
+                        evt.target.style.backgroundColor = 'red';
+                    }
+                    if(evt.ctrlKey === true){
+                        evt.target.style.backgroundColor = '';
+                    }
+                }
+                inputs[i].addEventListener('mouseover', clickHandler);
+            }
+        </script>
+    </body>
+</html>
